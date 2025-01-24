@@ -12,7 +12,11 @@ export default async function Home() {
       <ul className="space-y-4">
         {products.map((product: Product) => (
           <li key={product.id} className="bg-white shadow rounded-lg p-4">
-            <Link href={`/products/${product.id}`} className="text-blue-600 hover:underline">
+            <Link href={{
+              pathname: `/products/${product.id}`,
+              query: { name: product.name},
+              }} 
+              className="text-blue-600 hover:underline">
               {product.name}
             </Link>
           </li>
